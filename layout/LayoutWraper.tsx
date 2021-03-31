@@ -2,29 +2,18 @@ import AdminLayout from '@/layout/AdminLayout'
 import DefaultLayout from '@/layout/DefaultLayout'
 import React, { Children } from 'react'
 
-const DEFAULT_LAYOUT = 'default'
-// const ADMIN_LAYOUT = 'admin'
-
-interface ILayoutData {
-  [name:string] : React.ReactNode
-}
+const ADMIN_LAYOUT = 'admin'
 
 
 type PropsState = {
-  layout?: string | 'default',
-  children: React.ReactNode,
+  children: any
 }
 
 const LayoutWraper = (props: PropsState) => {
-  if(props.layout === DEFAULT_LAYOUT){
-    return (
-      <DefaultLayout {...props}>{props.children}</DefaultLayout>
-    )
-  }else {
-    
-    return (
-      <AdminLayout {...props}>{props.children}</AdminLayout>
-    )
+  if (props.children.type.layout === ADMIN_LAYOUT) {
+    return <AdminLayout {...props}>{props.children}</AdminLayout>
+  } else {
+    return <DefaultLayout {...props}>{props.children}</DefaultLayout>
   }
 }
 

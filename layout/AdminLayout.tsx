@@ -3,7 +3,7 @@ import HeaderNav from '@/components/HeaderNav/HeaderNav'
 import { Layout } from 'antd'
 const { Footer, Sider, Content } = Layout
 
-type Props= {
+type Props = {
 	children: React.ReactNode
 }
 

@@ -1,14 +1,10 @@
 import React from 'react'
 
-type Props= {
+type Props = {
 	children: React.ReactNode
 }
 
 const DefaultLayout = ({ children }: Props) => {
-	return (
-		<>
-      {children}
-    </>
-	)
+	return <>{children}</>
 }
 export default DefaultLayout

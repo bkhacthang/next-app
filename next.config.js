@@ -1,4 +1,10 @@
-module.exports = {
+const withImages = require('next-images')
+module.exports = withImages({
+	serverRuntimeConfig: {
+		MONGODB_URI: 'mongodb://127.0.0.1:27017',
+		MONGODB_DB: 'helloworld',
+	},
+	publicRuntimeConfig: {},
 	webpack(config, options) {
 		const { dir, defaultLoaders } = options
 		config.resolve.extensions.push('.ts', '.tsx')
@@ -10,4 +16,4 @@ module.exports = {
 		})
 		return config
 	},
-}
+})
