@@ -3,6 +3,7 @@ module.exports = withImages({
 	serverRuntimeConfig: {
 		MONGODB_URI: 'mongodb://127.0.0.1:27017',
 		MONGODB_DB: 'helloworld',
+		JWT_KEY: 'ksudfhisd79945^*34123dskfjshdf',
 	},
 	publicRuntimeConfig: {},
 	webpack(config, options) {
